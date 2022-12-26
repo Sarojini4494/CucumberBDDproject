@@ -19,7 +19,5 @@ Scenario: to verify the transactions details from the portal
     When To show the approved tax
    # And User clicks vt btn
    
-   When User clicks vt txn button
-   When User clicks process button
-   When User clicks processtwo button
-   When User clicks close button
+   When User clicks vt txn button for settlement
+    When User clicks Txn button for settlement

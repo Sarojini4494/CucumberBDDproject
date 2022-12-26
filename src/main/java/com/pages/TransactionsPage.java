@@ -123,7 +123,7 @@ public class TransactionsPage {
         prefs.put("profile.default_cntent_settings.popups", 0);
         prefs.put("download.default_directory", folder.getAbsolutePath());
 
-        Thread.sleep(3000);
+        Thread.sleep(4000);
         driver.findElement(Action).click();
         driver.findElement(Export).click();
 
@@ -212,9 +212,10 @@ public class TransactionsPage {
 
     }
     
-    public void Vt() throws InterruptedException {
+   public void Vtsettlement() throws InterruptedException {
         Thread.sleep(3000);
         driver.findElement(VT).click();
+        Thread.sleep(3000);
         driver.findElement(Amount).sendKeys("2500");
         driver.findElement(PhoneNo).sendKeys("7305632694");
         driver.findElement(Email).sendKeys("sarojiniu32@gmail.com");
@@ -223,19 +224,11 @@ public class TransactionsPage {
         driver.findElement(MMYY).sendKeys("12/25");
         driver.findElement(Cardholder).sendKeys("Platinum");
         driver.findElement(InvoiceNumber).sendKeys("12345");
-    }
-    
-    public void process() throws InterruptedException{
+   
 		Thread.sleep(3000);
         driver.findElement(Process).click();
-	}
-	
-	public void processtwo() throws InterruptedException{
 		Thread.sleep(3000);
         driver.findElement(Processtwo).click();
-	}
-        
-        public void Close() throws InterruptedException{
     		Thread.sleep(3000);
        driver.findElement(close).click();
 	}

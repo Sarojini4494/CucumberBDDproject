@@ -66,24 +66,11 @@ public class TransactionsPageStepDefination {
         transactionsPage.filterwitthallTransactiontype();
         transactionsPage.ExportValidation();
     }
-
-    @And("User clicks vt txn button")
-public void user_clicks_vt_txn_button() throws InterruptedException {
-	transactionsPage.Vt();
-}
- 
-@And("User click a Process button")
-public void user_click_a_process_button() throws InterruptedException {
-	transactionsPage.process();	
-}
-
-@And("User click a processtwo button")
-public void user_click_a_processtwo_button() throws InterruptedException {
-	transactionsPage.processtwo();
-}
-@And("User click close button")
-public void user_click_close_button() throws InterruptedException {
-	transactionsPage.Close();
-}
-
-}
+    
+    @When("User clicks vt txn button for settlement")
+    public void user_clicks_vt_txn_button_for_settlement() throws InterruptedException {
+    	transactionsPage.Vtsettlement();
+    
+    }
+    	
+    }
