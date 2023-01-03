@@ -20,7 +20,7 @@ import io.cucumber.java.en.When;
 
 public class UserSubisoStepDefinition {
 	
-	  private LoginPage  loginPage = new LoginPage(DriverFactory.getDriver());
+	 private LoginPage  loginPage = new LoginPage(DriverFactory.getDriver());
 	    private UserSubisoPage usersubisopage;
 	    private HomePage homePage;
 
@@ -60,22 +60,22 @@ public class UserSubisoStepDefinition {
 	public void user_fill_the_forms_from_given_sheetname_and_rownumber(String SheetName, Integer rowNumber) throws InvalidFormatException, IOException, InterruptedException{ {
 		
 		ExcelReader reader = new ExcelReader();
-        List<Map<String,String>> testData=
-                reader.getData("C:\\Users\\sarojini\\Downloads\\SubIso Testing.xlsx", SheetName);
-   
-       
-        String DBAName = testData.get(rowNumber).get("DBAn");
-       
-        String email = testData.get(rowNumber).get("mails");
-        String UserName = testData.get(rowNumber).get("userna");
-        String Phone = testData.get(rowNumber).get("phonen");
-        String firstName = testData.get(rowNumber).get("firstnam");
-        String lastName = testData.get(rowNumber).get("lastnam");
-        String address = testData.get(rowNumber).get("addre");
-        String zipcode = testData.get(rowNumber).get("zipc");
-        String city = testData.get(rowNumber).get("ci");
-       
-        usersubisopage.createISO(DBAName, email, UserName, Phone, firstName, lastName, address, zipcode, city);
+      List<Map<String,String>> testData=
+              reader.getData("C:\\Users\\sarojini\\Downloads\\SubIso Testing.xlsx", SheetName);
+ 
+     
+      String DBAName = testData.get(rowNumber).get("DBAn");
+     
+      String email = testData.get(rowNumber).get("mails");
+      String UserName = testData.get(rowNumber).get("userna");
+      String Phone = testData.get(rowNumber).get("phonen");
+      String firstName = testData.get(rowNumber).get("firstnam");
+      String lastName = testData.get(rowNumber).get("lastnam");
+      String address = testData.get(rowNumber).get("addre");
+      String zipcode = testData.get(rowNumber).get("zipc");
+      String city = testData.get(rowNumber).get("ci");
+     
+      usersubisopage.createISO(DBAName, email, UserName, Phone, firstName, lastName, address, zipcode, city);
 		
 	}
 	}
@@ -104,7 +104,7 @@ public class UserSubisoStepDefinition {
 	@When("user select all the subiso modules")
 	public void user_select_all_the_subiso_modules() throws InterruptedException {
 		usersubisopage.selectallmodule();
-		
+
 		
 	}
 

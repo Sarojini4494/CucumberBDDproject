@@ -1,8 +1,10 @@
 package com.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class UserSubisoPage {
@@ -23,9 +25,8 @@ public class UserSubisoPage {
     private By state =By.xpath("//div[@class='css-1hwfws3']");
    private By nextBtn = By.xpath("//span[contains(text(),'Next')]");
     private By selectmodule = By.xpath("//div[@class='MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input']");
-    private By module = By.xpath("//*[@id=\"menu-bin_details\"]/div[3]/ul/li");
+    private By module = By.xpath("//input[@value='jason']");
     private By submitbutton  = By.xpath("//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained jr-btn next-btn MuiButton-containedPrimary'][2]");
-    
     
     public UserSubisoPage(WebDriver driver) {
     	this.driver = driver;
@@ -68,24 +69,17 @@ public class UserSubisoPage {
     	driver.findElement(nextBtn).click();
     	
     driver.findElement(selectmodule).click();
-    WebElement body = driver.findElement(By.id("body"));
-    Select select = new Select(body);
-    select.selectByVisibleText("BIN NUMBER");
     Thread.sleep(3000);
-    
-    
-    }
-    public void click() throws InterruptedException {
-    	Thread.sleep(3000);
-    driver.findElement(module).click();
-   
-    
+   driver.findElement(By.xpath("(//li[@role='option'])[1]")).click();
+   Actions act = new Actions(driver);
+
+   act.sendKeys(Keys.TAB).build().perform();
+Thread.sleep(3000);
     }
   
- 
     public void selectallmodule() throws InterruptedException {
     	Thread.sleep(3000);
-    	driver.findElement(selectmodule).click();
+    	driver.findElement(module).click();
     }
     
 
