@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.openqa.selenium.WebDriver;
-
 import com.pages.HomePage;
 import com.pages.LoginPage;
 import com.pages.UseraddPage;

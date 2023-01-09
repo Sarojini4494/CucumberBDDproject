@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.poi.openxml4j.exceptions.InvalidOperationException;
+
 public class ConfigReader {
 
 private Properties prop;
@@ -23,6 +25,12 @@ private Properties prop;
              e.printStackTrace();
          }
          
+         catch(InvalidOperationException e) {
+     		e.printStackTrace();
+     	}
+         catch(NullPointerException e) {
+         e.printStackTrace();
+    }
          return prop;  
     }
     	

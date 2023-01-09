@@ -17,6 +17,7 @@ import com.qa.factory.DriverFactory;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import junit.framework.Assert;
 
@@ -216,16 +217,112 @@ public class TransactionsPageStepDefination {
 
     } 
     
-    /*@Given("User do txn")
-    public void user_do_txn() throws InterruptedException {
-    	transactionsPage.VTtxn();
+    @Given("User check txntype transaction with multpleoptions")
+    public void user_check_txntype_transaction_with_multpleoptions() throws InterruptedException {
+    	transactionsPage.txntypefilterclick();
+    }
+
+    @Given("User txntype performs the export on transactions")
+    public void user_txntype_performs_the_export_on_transactions() throws InterruptedException {
+    	transactionsPage.txntypefilteringoptinclick();
+    }
+
+    @Given("To txntype Verify the count")
+    public void to_txntype_verify_the_count() throws FileNotFoundException, IOException {
+    	transactionsPage.countcheck();
+    	transactionsPage.getRowCount();
+    }
+
+    @Given("To txntype show the approved tax")
+    public void to_txntype_show_the_approved_tax() throws InterruptedException {
+    	transactionsPage.txntypewitthallTransactiontype();
+    	transactionsPage.txntypeExportValidation();
+    }
+    
+    @Given("User check cardtype transaction with multpleoptions")
+    public void user_check_cardtype_transaction_with_multpleoptions() throws InterruptedException {
+    	transactionsPage.visafilterclick();
+    }
+
+    @Given("User cardtype performs the export on transactions")
+    public void user_cardtype_performs_the_export_on_transactions() throws InterruptedException {
+    	transactionsPage.visafilteringoptinclick();
     	
     }
-    @Given("User open admin txn")
-    public void user_open_admin_txn() throws InterruptedException {
-    	transactionsPage.txnadmin();
+
+    @Given("To cardtype Verify the count")
+    public void to_cardtype_verify_the_count() throws FileNotFoundException, IOException {
+    	transactionsPage.countcheck();
+    	transactionsPage.getRowCount();
+    }
+
+    @Given("To cardtype show the approved tax")
+    public void to_cardtype_show_the_approved_tax() throws InterruptedException {
+    	transactionsPage.visawitthallTransactiontype();
+    	transactionsPage.visaExportValidation();
     	
+    }
+    
+    
+    @Given("User check EPIfilter transaction with multpleoptions")
+    public void user_check_ep_ifilter_transaction_with_multpleoptions() throws InterruptedException {
+    	transactionsPage.EPIfilterclick();
+    }
+
+    @Given("User EPIfilter performs the export on transactions")
+    public void user_ep_ifilter_performs_the_export_on_transactions() throws InterruptedException {
+    	transactionsPage.EPIfilteringoptinclick();
+    }
+
+    @Given("To EPIfilter Verify the count")
+    public void to_ep_ifilter_verify_the_count() throws FileNotFoundException, IOException {
+    	transactionsPage.countcheck();
+    	transactionsPage.getRowCount();
+    }
+
+    @Given("To EPIfilter show the approved tax")
+    public void to_ep_ifilter_show_the_approved_tax() throws InterruptedException {
+    	transactionsPage.EPIthallTransactiontype();
+    	transactionsPage.EPIExportValidation();
+    }
+    
+    @Then("EPI search")
+    public void epi_search() throws InterruptedException {
+    	transactionsPage.episrfilterclick();
+    }
+    	
+    @Given("User check txnstatusdeclined transaction with multpleoptions")
+    public void user_check_txnstatusdeclined_transaction_with_multpleoptions() throws InterruptedException {
+    	transactionsPage.saledeclfilterclick();
+    }
+
+    @Given("User txnstatusdeclined performs the export on transactions")
+    public void user_txnstatusdeclined_performs_the_export_on_transactions() throws InterruptedException {
+    	transactionsPage.saledeclfilteringoptinclick();
+    }
+
+    @Given("To txnstatusdeclined Verify the count")
+    public void to_txnstatusdeclined_verify_the_count() throws FileNotFoundException, IOException {
+    	transactionsPage.countcheck();
+    	transactionsPage.getRowCount();
+    }
+
+    @Given("To txnstatusdeclined show the approved tax")
+    public void to_txnstatusdeclined_show_the_approved_tax() throws InterruptedException {
+    	transactionsPage.saledeclthallTransactiontype();
+    	transactionsPage.saledeclExportValidation();
+    }
+
+    @Given("EPI Filters")
+    public void epi_filters() throws InterruptedException {
+    	transactionsPage.EPIfilterclick();
+    }
+    /*@Given("Check count and Volume")
+    public void check_count_and_volume() throws InterruptedException {
+    	transactionsPage.
     }*/
+
+
  
     @Given("User do vt txn")
     public void user_do_vt_txn() throws InterruptedException {
@@ -236,14 +333,30 @@ public class TransactionsPageStepDefination {
     public void user_checks_txn_type_and_txn_icon_card_no_scheme_pop_and_processor_info_icon() throws InterruptedException {
     	transactionsPage.txntypetxicocardnschemeproc();
     }
+    
+    @Given("Export open batch and verify values")
+    public void export_open_batch_and_verify_values() throws InterruptedException {
+    	transactionsPage.exportopenbatch();
+    }
+    
+    @Given("User clicks export")
+    public void user_clicks_export() throws InterruptedException {
+    	transactionsPage.userclkexport();
+    }
+    
+    @Given("export the open batch")
+    public void export_the_open_batch() throws InterruptedException {
+    	transactionsPage.ExportopenValidation();
+    }
+    
     @Given("Check the values in OPEN BATCH , All the valid transactions should be there . Count and volume should be tally")
     public void check_the_values_in_open_batch_all_the_valid_transactions_should_be_there_count_and_volume_should_be_tally() throws InterruptedException {
     	transactionsPage.VTopen();
     }
-    /**@Given("Count and volume should be tally")
+    @Given("Count and volume should be tally")
     public void count_and_volume_should_be_tally() throws InterruptedException {
     	transactionsPage.countandvolumetally();
-    }**/
+    }
     
     @Given("View the Closed batch of the transactions")
     public void view_the_closed_batch_of_the_transactions() throws InterruptedException {
@@ -255,10 +368,17 @@ public class TransactionsPageStepDefination {
     	transactionsPage.issuerefaftsett();
     }
     
-    @Given("Void the transaction and verify in the open batch -> Check count and Volume")
-    public void void_the_transaction_and_verify_in_the_open_batch_check_count_and_volume() throws InterruptedException {
+    @Given("Void the transaction and verify in the open batch")
+    public void void_the_transaction_and_verify_in_the_open_batch() throws InterruptedException {
     	transactionsPage.voidtxnopenbtch();
     }
+    
+
+@Given("Check count and Volume in void")
+public void check_count_and_volume_in_void() throws InterruptedException {
+	transactionsPage.countanddvolu();
+}
+
     
 
 @Given("Compare the pagination, export and tile results")
