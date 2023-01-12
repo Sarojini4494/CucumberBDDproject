@@ -81,6 +81,14 @@ public class HomeStepPageDefinition {
 		homePage.tclick();
 		
 	}
+	
+		@When("User mtclick user button")
+		public void user_mtclick_user_button() throws InterruptedException {
+			homePage.mtclick();
+		}
+
+
+
 
 
 

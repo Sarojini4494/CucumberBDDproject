@@ -31,6 +31,14 @@ private Properties prop;
          catch(NullPointerException e) {
          e.printStackTrace();
     }
+         catch(IllegalArgumentException e) {
+        	 e.printStackTrace();
+         }
+         catch(IllegalStateException e) {
+        	 e.printStackTrace();
+         }
+         
+         
          return prop;  
     }
     	

@@ -12,3 +12,4 @@ Feature: Portal HomePage Feature
      When user cli user button
       When user clicks user button
       When user tclick user button
+      When User mtclick user button

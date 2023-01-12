@@ -1,6 +1,11 @@
 package com.pages;
 
 import java.io.File;
+
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
@@ -9,6 +14,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -70,7 +77,7 @@ public class TransactionsPage {
    private By cardno = By.xpath("//*[@id=\"app-site\"]/div/div[1]/div[3]/main/div/div[1]/div[1]/div[2]/div/div/div/div[2]/div/div[3]/div[1]/div/div[1]/div/div/span[2]/img");
 
    private By proicon = By.xpath("//*[@id=\"app-site\"]/div/div[1]/div[3]/main/div/div[1]/div[1]/div[2]/div/div/div/div[2]/div/div[3]/div[1]/div/div[1]/div/div/span[3]/img");
-   private By exportclk = By.xpath("(//span[contains(text(),'Export')])[2]");
+   private By exportclk = By.xpath("//*[@id=\"OpenBatchActionPoper\"]/div[3]/ul/li[1]");
   
    
     public TransactionsPage(WebDriver driver) {
@@ -267,7 +274,7 @@ public class TransactionsPage {
       
        public void closedbatchsett() throws InterruptedException {
        Thread.sleep(5000);
-       Map<String, Object> prefs = new HashMap<String, Object>();
+      // Map<String, Object> prefs = new HashMap<String, Object>();
       driver.findElement(Action).click();
       Thread.sleep(5000);
       driver.findElement(batchout).click();
@@ -1428,35 +1435,17 @@ public class TransactionsPage {
        List<WebElement> terminal = driver.findElements(By.xpath("//ul[@role='menu']/li"));
        System.out.println("this open batch size is"+terminal.size());
        terminal.get(1).click();
-       }
        
-       public void userclkexport() throws InterruptedException {
-    	   Thread.sleep(3000);
-           driver.findElement(exportclk).click();
-           
-       }
-
+       Thread.sleep(6000);
+       Map<String, Object> prefs = new HashMap<String, Object>();
+      driver.findElement(Action).click();
+      Thread.sleep(6000);
+      driver.findElement(exportclk).click();
+      Thread.sleep(3000);
+      driver.findElement(By.xpath("(//span[contains(text(),'Export')])[2]")).click();
+}
        
-       public void ExportopenValidation() throws InterruptedException {
-    	   Thread.sleep(3000);
-       File filelocation = new File("C:\\Users\\sarojini\\git\\CucumberProject\\PractiseCucumber\\src\\test\\resources\\AppFeatures\\CucumberBDD\\src\\Excel");
-         
-       File[] totalFiles=filelocation.listFiles();
-       
-      for (File file : totalFiles) {
-		
-    	  if(file.getName().equals("Export")) {
-    		  System.out.println("file is downloaded");
-    		  break;
-    		  
-    	  }
-	}
-       
-       
-       
-       }
-       
-       
+      
        //Check the values in OPEN BATCH , All the valid transactions should be there . Count and volume should be tally
 
        public void VTopen() throws InterruptedException {

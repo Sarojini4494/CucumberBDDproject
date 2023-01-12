@@ -113,20 +113,16 @@ Scenario: to verify the transactions details from the portal
        
     #Check the Transaction type , Transaction icon , Card No scheme pop , Processor info icon
           
-   @Sanitydateallfilter
+   @Sanitydateall
     Scenario: to verify the transactions details from the portal 
     Given User do vt txn
     Given User checks txn type and txn icon card no scheme pop and processor info icon
     
     #Export the Open Batch and verify the values
-    
+     @SanitydateallExport
     Scenario: to verify the transactions details from the portal 
     Given Export open batch and verify values
-    Given User clicks export
-    Given export the open batch
-    
-    
-    
+     
     #Check the values in OPEN BATCH , All the valid transactions should be there . Count and volume should be tally
     
      @Sanitydateallfilter

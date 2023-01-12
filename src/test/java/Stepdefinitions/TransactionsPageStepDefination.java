@@ -30,6 +30,8 @@ public class TransactionsPageStepDefination {
 
     @Given("user is on TransactionsPage")
     public void user_is_on_transactions_page(DataTable credTable) throws InterruptedException {
+   
+    
         List<Map<String, String>> credList = credTable.asMaps();
         String userName = credList.get(0).get("username");
         String password = credList.get(0).get("password");
@@ -38,6 +40,7 @@ public class TransactionsPageStepDefination {
         transactionsPage = homePage.tclick();
 
     }
+
     
     @When("User check the today's transactions")
     public void user_check_the_today_s_transactions() throws InterruptedException {
@@ -330,24 +333,15 @@ public class TransactionsPageStepDefination {
     }
 
     @Given("User checks txn type and txn icon card no scheme pop and processor info icon")
-    public void user_checks_txn_type_and_txn_icon_card_no_scheme_pop_and_processor_info_icon() throws InterruptedException {
+    public void user_checks_txn_type_and_txn_icon_card_no_scheme_pop_and_processor_info_icon()  throws InterruptedException {
     	transactionsPage.txntypetxicocardnschemeproc();
     }
     
     @Given("Export open batch and verify values")
-    public void export_open_batch_and_verify_values() throws InterruptedException {
+    public void export_open_batch_and_verify_values()  throws InterruptedException {
     	transactionsPage.exportopenbatch();
     }
     
-    @Given("User clicks export")
-    public void user_clicks_export() throws InterruptedException {
-    	transactionsPage.userclkexport();
-    }
-    
-    @Given("export the open batch")
-    public void export_the_open_batch() throws InterruptedException {
-    	transactionsPage.ExportopenValidation();
-    }
     
     @Given("Check the values in OPEN BATCH , All the valid transactions should be there . Count and volume should be tally")
     public void check_the_values_in_open_batch_all_the_valid_transactions_should_be_there_count_and_volume_should_be_tally() throws InterruptedException {

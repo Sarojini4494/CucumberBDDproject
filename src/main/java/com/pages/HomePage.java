@@ -15,6 +15,8 @@ public class HomePage {
     
     private By transacclk = By.xpath("//*[@id=\"app-site\"]/div/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a/span/span");
     
+    private By Myticketclk = By.xpath("//*[@id=\"app-site\"]/div/div[1]/div[2]/div/div/div[2]/div[1]/ul/li[10]/a/span/span");
+    
     public HomePage(WebDriver driver) {
         this.driver = driver;
         
@@ -55,5 +57,11 @@ public class HomePage {
        driver.findElement(transacclk).click();
         return new TransactionsPage(driver);
 	}
+	
+	public MyTicketsPage mtclick() throws InterruptedException {
+		Thread.sleep(3000);
+	       driver.findElement(Myticketclk).click();
+	        return new MyTicketsPage(driver);
+		}
 	
 }
